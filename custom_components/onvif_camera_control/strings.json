@@ -1,0 +1,36 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add ONVIF Camera",
+        "description": "Connect a camera using its ONVIF service address and credentials.",
+        "data": {
+          "host": "Camera address or hostname",
+          "port": "ONVIF port",
+          "username": "Username",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_host": "Invalid camera address",
+      "cannot_connect": "Unable to connect to camera",
+      "invalid_auth": "Invalid username or password",
+      "unknown": "Unexpected error"
+    },
+    "abort": {"already_configured": "Camera already configured"}
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Bitrate limits",
+        "description": "Automatic detection uses ONVIF Media2. If unavailable, enter confirmed bitrate limits for this camera. Set both fields to 0 for automatic detection. These limits apply to each H.264 encoder on this camera.",
+        "data": {
+          "bitrate_min_kbps": "Minimum bitrate (kbit/s, 0 = automatic)",
+          "bitrate_max_kbps": "Maximum bitrate (kbit/s, 0 = automatic)"
+        }
+      }
+    },
+    "error": {"invalid_bitrate_range": "Enter two zeros or a valid positive min/max range"}
+  }
+}

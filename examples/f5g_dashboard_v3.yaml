@@ -1,0 +1,149 @@
+title: F5G Kamerakontroll
+views:
+  - title: Kamera
+    path: f5g-kontroll
+    icon: mdi:cctv
+    type: sections
+    max_columns: 2
+    sections:
+      - type: grid
+        column_span: 2
+        cards:
+          - type: heading
+            heading: Direkte kamerabilde
+            heading_style: title
+            icon: mdi:cctv
+          - type: picture-entity
+            entity: camera.onvif_camera_profile_000
+            camera_view: live
+            show_name: false
+            show_state: false
+            grid_options:
+              columns: full
+              rows: auto
+
+      - type: grid
+        column_span: 2
+        cards:
+          - type: heading
+            heading: Kameraprofiler · hovedstrøm
+            heading_style: title
+            icon: mdi:tune-variant
+          - type: button
+            name: Høy kvalitet
+            icon: mdi:high-definition-box
+            show_state: false
+            grid_options:
+              columns: 6
+            tap_action:
+              action: perform-action
+              perform_action: script.onvif_f5g_hoy_kvalitet
+              confirmation:
+                text: "Endre hovedstrøm til 5 MP, 20 FPS og 2048 kbit/s?"
+          - type: button
+            name: Lav båndbredde
+            icon: mdi:network-strength-2
+            show_state: false
+            grid_options:
+              columns: 6
+            tap_action:
+              action: perform-action
+              perform_action: script.onvif_f5g_lav_bandbredde
+              confirmation:
+                text: "Endre hovedstrøm til 720p, 15 FPS og 512 kbit/s?"
+
+      - type: grid
+        cards:
+          - type: heading
+            heading: Hovedstrøm
+            heading_style: title
+            icon: mdi:video-high-definition
+
+          - type: tile
+            entity: select.onvif_camera_192_168_1_100_vetoken_1_opplosning
+            name: Oppløsning
+            icon: mdi:aspect-ratio
+            grid_options:
+              columns: 12
+            features_position: bottom
+            features:
+              - type: select-options
+
+          - type: tile
+            entity: number.onvif_camera_192_168_1_100_vetoken_1_bildefrekvens
+            name: Bildefrekvens
+            icon: mdi:filmstrip
+            grid_options:
+              columns: 6
+            features_position: bottom
+            features:
+              - type: numeric-input
+                style: slider
+
+          - type: tile
+            entity: number.onvif_camera_192_168_1_100_vetoken_1_i_frame_intervall
+            name: I-frame-intervall
+            icon: mdi:video-outline
+            grid_options:
+              columns: 6
+            features_position: bottom
+            features:
+              - type: numeric-input
+                style: buttons
+
+          - type: entities
+            show_header_toggle: false
+            grid_options:
+              columns: 12
+            entities:
+              - entity: number.onvif_camera_192_168_1_100_vetoken_1_bitrate
+                name: Bitrate
+                icon: mdi:speedometer
+
+      - type: grid
+        cards:
+          - type: heading
+            heading: Sekundærstrøm
+            heading_style: title
+            icon: mdi:video
+
+          - type: tile
+            entity: select.onvif_camera_192_168_1_100_vetoken_2_opplosning
+            name: Oppløsning
+            icon: mdi:aspect-ratio
+            grid_options:
+              columns: 12
+            features_position: bottom
+            features:
+              - type: select-options
+
+          - type: tile
+            entity: number.onvif_camera_192_168_1_100_vetoken_2_bildefrekvens
+            name: Bildefrekvens
+            icon: mdi:filmstrip
+            grid_options:
+              columns: 6
+            features_position: bottom
+            features:
+              - type: numeric-input
+                style: slider
+
+          - type: tile
+            entity: number.onvif_camera_192_168_1_100_vetoken_2_i_frame_intervall
+            name: I-frame-intervall
+            icon: mdi:video-outline
+            grid_options:
+              columns: 6
+            features_position: bottom
+            features:
+              - type: numeric-input
+                style: buttons
+
+          - type: entities
+            show_header_toggle: false
+            grid_options:
+              columns: 12
+            entities:
+              - entity: number.onvif_camera_192_168_1_100_vetoken_2_bitrate
+                name: Bitrate
+                icon: mdi:speedometer

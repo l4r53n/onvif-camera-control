@@ -1,0 +1,56 @@
+# F5G manual presets. Loaded through homeassistant.packages.
+# They apply to the main stream (VEToken_1) only.
+script:
+  onvif_f5g_hoy_kvalitet:
+    alias: "F5G · Høy kvalitet (hovedstrøm)"
+    description: "5 MP, 20 FPS, 2048 kbit/s, I-frame 20"
+    icon: mdi:high-definition-box
+    mode: single
+    sequence:
+      - action: select.select_option
+        target:
+          entity_id: select.onvif_camera_192_168_1_100_vetoken_1_opplosning
+        data:
+          option: "5 MP (2880 × 1624)"
+      - action: number.set_value
+        target:
+          entity_id: number.onvif_camera_192_168_1_100_vetoken_1_bildefrekvens
+        data:
+          value: 20
+      - action: number.set_value
+        target:
+          entity_id: number.onvif_camera_192_168_1_100_vetoken_1_bitrate
+        data:
+          value: 2048
+      - action: number.set_value
+        target:
+          entity_id: number.onvif_camera_192_168_1_100_vetoken_1_i_frame_intervall
+        data:
+          value: 20
+
+  onvif_f5g_lav_bandbredde:
+    alias: "F5G · Lav båndbredde (hovedstrøm)"
+    description: "720p, 15 FPS, 512 kbit/s, I-frame 30"
+    icon: mdi:network-strength-2
+    mode: single
+    sequence:
+      - action: select.select_option
+        target:
+          entity_id: select.onvif_camera_192_168_1_100_vetoken_1_opplosning
+        data:
+          option: "720p (1280 × 720)"
+      - action: number.set_value
+        target:
+          entity_id: number.onvif_camera_192_168_1_100_vetoken_1_bildefrekvens
+        data:
+          value: 15
+      - action: number.set_value
+        target:
+          entity_id: number.onvif_camera_192_168_1_100_vetoken_1_bitrate
+        data:
+          value: 512
+      - action: number.set_value
+        target:
+          entity_id: number.onvif_camera_192_168_1_100_vetoken_1_i_frame_intervall
+        data:
+          value: 30
