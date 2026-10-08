@@ -18,6 +18,10 @@ jobs:
         uses: hacs/action@main
         with:
           category: integration
+          # PolyForm Noncommercial 1.0.0 is not currently recognized by HACS'
+          # GitHub license check (SPDX NOASSERTION). Keep all other checks.
+          # https://github.com/hacs/integration/issues/5561
+          ignore: license
 
   hassfest:
     name: Home Assistant Hassfest
