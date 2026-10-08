@@ -14,6 +14,7 @@ from homeassistant.const import (
 )
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import ConfigEntryNotReady
+from homeassistant.helpers import config_validation as cv
 
 from .camera_client import CameraControlClient
 from .coordinator import OnvifCameraCoordinator
@@ -22,6 +23,7 @@ from .config_flow import CONF_BITRATE_MIN, CONF_BITRATE_MAX
 
 _LOGGER = logging.getLogger(__name__)
 
+CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
 PLATFORMS = [Platform.SENSOR, Platform.SELECT, Platform.NUMBER]
 
 

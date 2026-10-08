@@ -18,6 +18,10 @@ jobs:
         uses: hacs/action@main
         with:
           category: integration
+          # PolyForm Noncommercial 1.0.0 is not currently recognized by HACS'
+          # GitHub license check (SPDX NOASSERTION). Keep all other checks.
+          # https://github.com/hacs/integration/issues/5561
+          ignore: license
 
   hassfest:
     name: Home Assistant Hassfest
@@ -36,7 +40,7 @@ jobs:
         with:
           python-version: '3.13'
       - name: Install test runner
-        run: python -m pip install pytest
+        run: python -m pip install pytest PyYAML
       - name: Check Python syntax
         run: python -m compileall -q custom_components tools tests
       - name: Run tests

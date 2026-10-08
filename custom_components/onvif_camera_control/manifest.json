@@ -1,18 +1,18 @@
 {
   "domain": "onvif_camera_control",
   "name": "ONVIF Camera Control",
-  "version": "0.2.0",
-  "documentation": "https://github.com/l4r53n/onvif-camera-control#readme",
+  "codeowners": [
+    "@l4r53n"
+  ],
   "config_flow": true,
   "dependencies": [
     "onvif"
   ],
-  "requirements": [
-    "onvif-zeep-async==4.3.0"
-  ],
+  "documentation": "https://github.com/l4r53n/onvif-camera-control#readme",
   "iot_class": "local_polling",
   "issue_tracker": "https://github.com/l4r53n/onvif-camera-control/issues",
-  "codeowners": [
-    "@l4r53n"
-  ]
+  "requirements": [
+    "onvif-zeep-async>=4.3.0"
+  ],
+  "version": "0.2.0"
 }

@@ -73,6 +73,12 @@ python3 -m pytest tests -q
 
 Disse er **offline tester**. Kjør `ha core check` på den faktiske installasjonen, og test hver kameramodell forsiktig før du tar den i produksjon. Full HA-livssyklustest og fysisk kameratest er ikke utført på denne byggemaskinen.
 
+## Lisens og kommersiell bruk
+
+**PolyForm Noncommercial License 1.0.0** (se [LICENSE](LICENSE)). Prosjektet er tilgjengelig for personlige og andre ikke-kommersielle formål under vilkårene i lisensen. **Kommersiell bruk er ikke tillatt uten separat skriftlig tillatelse fra rettighetshaveren.** Dette er en *source-available* lisens, ikke en OSI-godkjent åpen kildekode-lisens.
+
+Required Notice: Copyright (c) 2026 l4r53n
+
 ## HACS
 
 Prosjektstrukturen inneholder `hacs.json` og er klargjort for et eget Git-repository. Det er **ikke publisert i HACS**. Legg pakken i et GitHub-repository, publiser en versjon og legg repositoriet til som en egendefinert integrasjon dersom du senere vil installere via HACS.
